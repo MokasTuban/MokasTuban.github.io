@@ -1,178 +1,231 @@
-<!--
-MOKAS TUBAN - GitHub Pages single-file site (index.html)
-Style: Cyberpunk, professional
-Includes: hero, offers, trade-in section, gallery placeholders, contact WA button (tel:089659833666)
-Deployment: create a GitHub repo (e.g. mokas-tuban), add this index.html to the repo root, enable Pages from main branch -> / (root)
--->
-
 <!doctype html>
 <html lang="id">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MOKAS TUBAN — Motor Bekas & Baru | DP 500K</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PUSAT JUAL BELI MOTOR BEKAS/BARU CASH/KREDIT TERMURAH DI TUBAN BOJONEGORO DAN SEKITARNYA </title>
   <meta name="description" content="MOKAS TUBAN — Motor bekas & baru. DP mulai 500 Ribu. Tuban - Bojonegoro. Jual, beli, tukar tambah. WA: 089659833666" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#06060b;
-      --glass: rgba(255,255,255,0.03);
+      --glass: rgba(255,255,255,0.06);
       --neon-pink:#ff2d95;
       --neon-cyan:#00e6ff;
       --accent: linear-gradient(90deg,var(--neon-cyan),var(--neon-pink));
-      --card: rgba(10,10,15,0.6);
-      color-scheme: dark;
     }
-    *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;font-family:Rubik,system-ui,Arial;background:
-      radial-gradient(ellipse at 10% 10%, rgba(0,230,255,0.06), transparent 10%),
-      radial-gradient(ellipse at 90% 90%, rgba(255,45,149,0.04), transparent 10%),
-      var(--bg);
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Rubik,system-ui;
+      background:var(--bg);
       color:#e6eef5;
-      -webkit-font-smoothing:antialiased}
+      padding-bottom:40px;
+      overflow-x:hidden;
+    }
+    .content{position:relative;z-index:2}
 
-    header{padding:36px 20px;display:flex;align-items:center;gap:20px}
-    .logo{display:flex;align-items:center;gap:14px}
-    .logo-badge{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#071021 0%, rgba(255,255,255,0.02) 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(0,0,0,0.6),0 0 18px rgba(0,230,255,0.05) inset}
-    .logo-badge svg{filter:drop-shadow(0 6px 18px rgba(0,230,255,0.08))}
-    h1{font-family:Orbitron,monospace;margin:0;font-size:20px;line-height:1}
-    p.lead{margin:0;font-size:13px;color:#a9bccb}
+    header{
+      text-align:center;
+      padding:28px 16px;
+      position:relative;z-index:3;
+    }
+    header img{
+      width:90px;
+      filter:drop-shadow(0 0 18px var(--neon-cyan));
+    }
+    header h1{
+      margin-top:10px;
+      font-family:Orbitron;
+      font-size:22px;
+      background:var(--accent);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+    .hero{
+      padding:16px;
+      background:rgba(255,255,255,0.03);
+      margin:0 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.06);
+      position:relative;z-index:3;
+    }
+    .title{
+      margin-top:12px;
+      font-family:Orbitron;
+      font-size:26px;
+      background:var(--accent);
+      -webkit-background-clip:text;
+      color:transparent;
+      line-height:1.2;
+    }
+    .desc{
+      margin:10px 0;
+      color:#cfe9f3;
+      font-size:15px;
+    }
+    .btn{
+      display:block;
+      width:100%;
+      text-align:center;
+      padding:14px;
+      border-radius:10px;
+      font-weight:700;
+      margin-top:10px;
+      text-decoration:none;
+    }
+    .btn-primary{
+      background:var(--neon-cyan);
+      color:#03060a;
+      box-shadow:0 0 12px var(--neon-cyan);
+    }
+    .btn-outline{
+      border:1px solid rgba(255,255,255,0.2);
+      color:#e6eef5;
+      background:rgba(0,0,0,0.3);
+    }
+    .offer{
+      margin-top:14px;
+      background:rgba(0,0,0,0.35);
+      padding:12px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.03);
+      display:flex;
+      justify-content:space-between;
+      font-size:14px;
+    }
+    .offer strong{color:var(--neon-pink)}
 
-    .hero{padding:28px 20px;display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
-    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(0,230,255,0.06);padding:28px;border-radius:14px;backdrop-filter:blur(6px)}
-    .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--neon-cyan),var(--neon-pink));color:#02060a;font-weight:700;font-size:12px}
-    .title{font-family:Orbitron,monospace;font-size:36px;margin:10px 0;color:transparent;background:var(--accent);-webkit-background-clip:text;background-clip:text}
-    .desc{color:#cfe9f3;margin:10px 0 18px}
+    section{
+      margin:20px 12px;
+      background:rgba(255,255,255,0.03);
+      padding:16px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.06);
+      position:relative;z-index:3;
+    }
+    section h2{
+      font-family:Orbitron;
+      margin-bottom:10px;
+      background:var(--accent);
+      -webkit-background-clip:text;
+      color:transparent;
+      font-size:20px;
+    }
+    .gallery{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+    }
+    .thumb{
+      background:rgba(0,0,0,0.4);
+      height:90px;
+      border-radius:8px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:11px;
+      color:#a9cbd8;
+      border:1px solid rgba(255,255,255,0.05);
+    }
 
-    .cta{display:flex;gap:10px}
-    .btn{padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
-    .btn-primary{background:var(--neon-cyan);color:#03060a}
-    .btn-wabtn{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#e6eef5}
+    footer{
+      margin-top:20px;
+      text-align:center;
+      color:#9fb9c8;
+      font-size:13px;
+      padding:10px;
+      position:relative;z-index:3;
+    }
 
-    .offer-list{display:flex;flex-direction:column;gap:10px;margin-top:8px}
-    .offer{padding:12px;border-radius:10px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
-    .offer strong{color:var(--neon-pink);font-size:18px}
+    /* HACKER BLUE EFFECT */
+    .hacker-overlay{
+      position:fixed;inset:0;z-index:1;pointer-events:none;mix-blend-mode:screen;
+      background:radial-gradient(ellipse at 20% 10%, rgba(0,230,255,0.06), transparent 8%),
+                 radial-gradient(ellipse at 85% 90%, rgba(0,230,255,0.03), transparent 10%),
+                 linear-gradient(180deg, rgba(0,40,60,0.6), rgba(0,0,0,0.5));
+      opacity:0.95;backdrop-filter:blur(0.6px);
+      animation:bgShift 12s linear infinite;
+    }
+    .hacker-overlay::before{
+      content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(0deg, rgba(0,230,255,0.03) 0px, rgba(0,230,255,0.03) 1px, transparent 2px);opacity:0.6;mix-blend-mode:overlay;
+    }
+    .hacker-scan{
+      position:fixed;left:0;right:0;height:2px;top:-20%;background:linear-gradient(90deg, transparent, rgba(0,230,255,0.9), transparent);z-index:1;pointer-events:none;filter:blur(0.6px);
+      animation:scan 5s linear infinite;
+    }
+    .hacker-overlay::after{
+      content:"";position:absolute;inset:0;background-image:linear-gradient(90deg, rgba(0,230,255,0.02) 0.5px, transparent 0.5px);background-size:6px 100%;opacity:0.25;mix-blend-mode:overlay;
+    }
 
-    .side-card{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03)}
-    .side-card h3{margin:0 0 8px;font-size:16px}
-    .qty{display:flex;gap:8px;flex-wrap:wrap}
-    .chip{padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:999px;border:1px solid rgba(255,255,255,0.03)}
+    @keyframes scan{0%{top:-20%}40%{top:110%}100%{top:210%}}
+    @keyframes bgShift{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
 
-    .sections{padding:16px 20px;display:grid;grid-template-columns:1fr 360px;gap:28px}
-    section.card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    section.card h2{margin-top:0;font-family:Orbitron,monospace}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    .thumb{height:120px;border-radius:8px;background:linear-gradient(90deg, rgba(0,0,0,0.3), rgba(0,0,0,0.45));display:flex;align-items:center;justify-content:center;font-size:12px;color:#a7bcc8}
+    .terminal-bottom{
+      position:fixed;left:12px;right:12px;bottom:12px;background:rgba(0,0,0,0.35);border:1px solid rgba(0,230,255,0.06);padding:8px;border-radius:8px;color:#7fe8ff;font-family:monospace;font-size:12px;z-index:3
+    }
 
-    footer{padding:20px;text-align:center;color:#99b0bf;font-size:13px}
-
-    /* neon underline animation */
-    .neon-line{height:3px;background:var(--neon-cyan);border-radius:3px;box-shadow:0 0 12px var(--neon-cyan)}
-
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .sections{grid-template-columns:1fr}
+    @media(max-width:420px){
+      header h1{font-size:18px}
+      .title{font-size:20px}
     }
   </style>
 </head>
 <body>
-  <header class="py-10 text-center">
-        <img src="MOKAS.png" alt="MOKAS Tuban Logo" class="mx-auto w-40 h-auto mb-4" />
-        <h1 class="text-4xl font-bold text-cyan-300">MOKAS TUBAN</h1>
-        <p class="text-lg text-cyan-500">Motor Bekas & Baru • DP Mulai 500K • Tuban–Bojonegoro</p>
-    </header>
 
-  <main>
-    <div class="hero">
-      <div class="hero-card">
-        <span class="kicker">OFFERS TODAY</span>
-        <h2 class="title">DP 500 RIBU — LANGSUNG BAWA PULANG</h2>
-        <p class="desc">Beat, Vario, Scoopy (2022–2025) & merk lain ready. Cash atau kredit — proses cepat, surat lengkap, pengantaran ke Tuban & Bojonegoro.</p>
+<header>
+  <img src="MOKAS.png" alt="MOKAS Tuban Logo" />
+  <h1>PUSAT JUAL BELI MOTOR BEKAS/BARU CASH/KREDIT TERMURAH DI TUBAN BOJONEGORO</h1>
+  <p style="color:#00e6ff;margin-top:6px">Motor Bekas & Baru • DP Mulai 500K • Tukar Tambah • Tuban – Bojonegoro</p>
+</header>
 
-        <div class="cta">
-          <a class="btn btn-primary" href="https://wa.me/6289659833666" target="_blank" rel="noopener">Chat WA • 089659833666</a>
-          <a class="btn btn-wabtn" href="#offers">Lihat Unit & Tukar Tambah</a>
-        </div>
+<!-- Hacker Effects -->
+<div class="hacker-overlay"></div>
+<div class="hacker-scan"></div>
+<div class="terminal-bottom">System Active • Node: MOKAS500K_TUBAN • Secure Channel</div>
 
-        <div class="offer-list">
-          <div class="offer"><div>Unit siap pakai</div><strong>Mulai Rp 8.000.000</strong></div>
-          <div class="offer"><div>Motor baru</div><strong>DP 1.5–2 Juta</strong></div>
-          <div class="offer"><div>Tukar tambah</div><strong>Proses cepat | Harga fair</strong></div>
-        </div>
-      </div>
+<main class="content">
+  <div class="hero">
+    <h2 class="title">DP 500 RIBU — LANGSUNG BAWA PULANG</h2>
+    <p class="desc">Beat, Vario, Scoopy (2022–2025) & merk lain ready. Proses cepat, cash/kredit ringan, surat lengkap.</p>
 
-      <aside class="side-card">
-        <h3>Kenapa pilih MOKAS TUBAN?</h3>
-        <ul style="margin:8px 0 0 14px;color:#bcd5df">
-          <li>Unit masuk tiap hari — kualitas cek before delivery</li>
-          <li>Proses kredit cepat, notaris dan balik nama bantu</li>
-          <li>Antar ke rumah (Tuban sekitarnya )</li>
-        </ul>
+    <a class="btn btn-primary" href="https://wa.me/6289659833666">Chat WA • 089659833666</a>
+    <a class="btn btn-outline" href="#offers">Lihat Unit & Tukar Tambah</a>
 
-        <div style="margin-top:12px">
-          <div style="font-size:12px;color:#9fb9c8;margin-bottom:8px">Kategori cepat</div>
-          <div class="qty">
-            <span class="chip">Matic</span>
-            <span class="chip">Sport</span>
-            <span class="chip">Bebek</span>
-            <span class="chip">Tukar Tambah</span>
-          </div>
-        </div>
-      </aside>
+    <div class="offer"><div>Unit siap pakai</div><strong>Mulai Rp 8.000.000</strong></div>
+    <div class="offer"><div>Motor baru</div><strong>DP 1.5–2 Juta</strong></div>
+    <div class="offer"><div>Tukar tambah</div><strong>Proses cepat | Harga fair</strong></div>
+  </div>
+
+  <section id="offers">
+    <h2>Jual • Beli • Tukar Tambah</h2>
+    <p>Terima motor bekas, tukar tambah, dan motor baru DP ringan. Penilaian cepat & antar alamat.</p>
+
+    <h3 style="margin-top:14px">Proses</h3>
+    <ol style="margin-left:18px;color:#cfe9f3">
+      <li>Survey unit</li>
+      <li>DP mulai 500 ribu</li>
+      <li>Proses cash/kredit</li>
+      <li>Antar unit ke rumah</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Gallery Unit</h2>
+    <div class="gallery">
+      <div class="thumb">Beat / Vario / Scoopy</div>
+      <div class="thumb">Supra / CB / Sport</div>
+      <div class="thumb">Unit Bekas Ready</div>
+      <div class="thumb">Unit Baru Dealer</div>
+      <div class="thumb">Tukar Tambah</div>
+      <div class="thumb">Antar Alamat</div>
     </div>
+  </section>
+</main>
 
-    <div class="sections">
-      <section class="card" id="offers">
-        <h2>Jual · Beli · Tukar Tambah</h2>
-        <p style="color:#bcd5df">Terima jual motor bekas, tukar tambah, dan jual motor baru DP ringan. Kami bantu penilaian unit lama, cepat proses administrasi, dan antar unit sampai alamat Anda.</p>
-
-        <h3 style="margin-top:14px">Proses singkat</h3>
-        <ol style="color:#bcd5df;margin-left:18px">
-          <li>Survey & nilai unit (online / datang)</li>
-          <li>DP mulai 500 ribu — tandatangan</li>
-          <li>Proses kredit / cash & balik nama</li>
-          <li>Antar unit (Tuban · Bojonegoro)</li>
-        </ol>
-
-        <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
-          <a class="btn btn-primary" href="https://wa.me/6289659833666" target="_blank">Hubungi WA sekarang</a>
-          <a class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:#e6eef5" href="#gallery">Lihat Gallery</a>
-        </div>
-
-      </section>
-
-      <aside class="card">
-        <h2>Gallery & unit Lengkap </h2>
-        <div class="gallery" id="gallery">
-          <div class="thumb">Beat • Vario • Scoopy</div>
-          <div class="thumb">Supra • CB150 • Ninja</div>
-          <div class="thumb">Unit bekas siap pakai</div>
-          <div class="thumb">Motor baru (dealer)</div>
-          <div class="thumb">Tukar tambah — contoh</div>
-          <div class="thumb">Antar ke alamat</div>
-        </div>
-
-        <div style="margin-top:12px">
-          <div style="font-size:12px;color:#9fb9c8">Hashtags</div>
-          <div style="margin-top:6px;color:#a9cbd8">#Dp500Tuban &nbsp; #MotorCashTuban &nbsp; #Mokas500K</div>
-        </div>
-
-      </aside>
-    </div>
-  </main>
-
-  <footer>
-    <div style="max-width:980px;margin:0 auto;padding:12px 18px;border-radius:10px">
-      <div style="display:flex;justify-content:center;gap:12px;align-items:center;flex-wrap:wrap">
-        <div style="font-weight:700">MOKAS TUBAN</div>
-        <div>|</div>
-        <div>DP mulai 500 Ribu • Tuban · Bojonegoro dan sekitarnya </div>
-        <div>|</div>
-        <div>WA: <a href="https://wa.me/6289659833666" style="color:var(--neon-cyan);font-weight:700;text-decoration:none">089659833666</a></div>
-      </div>
-      <div style="margin-top:8px;color:#93b0bf;font-size:13px">Built for quick listings — deploy to GitHub Pages: create repo → push index.html → Settings → Pages → Choose branch main → / (root) → Save</div>
-    </div>
-  </footer>
+<footer>
+  <div>MOKAS500KTUBAN OFFICIAL ACCOUNT — TikTok • Instagram • Facebook • YouTube • Twitter</div>
+  <div style="margin-top:6px">© 2025 MOKAS TUBAN — All Rights Reserved</div>
+</footer>
 
 </body>
 </html>
